@@ -1,0 +1,21 @@
+{
+  "name": "chacoesculpe",
+  "version": "1.0.0",
+  "description": "\"La organización de la Bienal Internacional de Escultura del Chaco, se ha contactado con su empresa para planificar, analizar, desarrollar e implementar un sistema de gestión que soporte el registro de los eventos, escultores como así también aplicaciones satélites para que los ciudadanos/público en general puedan realizar comentarios y votaciones durante el evento.\"",
+  "main": "Escultor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chacoesculpe": "file:",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "mongoose": "^8.7.0",
+    "nodemon": "^3.1.7"
+  }
+}
