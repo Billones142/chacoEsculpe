@@ -12,8 +12,18 @@ const options = {
 };
 // Middleware
 app.use(cors({
-   origin: 'https://localhost:3000,https://localhost:3001 ',
-   credentials: true
+  origin: function (origin, callback) {
+    // Lista de orígenes permitidos
+    const allowedOrigins = ['http://localhost:3001', 'https://localhost:3000'];
+    
+    // Si no hay origen o el origen está en la lista permitida
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Origen no permitido por CORS'));
+    }
+  },
+  credentials: true  // Permitir envío de credenciales (como cookies) en la solicitud
 }));
 app.use(express.json()); // Para poder recibir JSON en las solicitudes
 // Cargar los certificados
