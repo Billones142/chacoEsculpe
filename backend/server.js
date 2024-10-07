@@ -1,9 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+require("dotenv").config()
 const Escultor = require('./modelos/Escultor'); 
 const app = express();
-const PORT = 3000;
+const PORT = Number(process.env.PORT) | 3000;
+const DBURI= process.env.MONGODBURI
 const fs = require('fs');
 const https = require('https');
 const options = {
@@ -30,7 +32,8 @@ app.use(express.json()); // Para poder recibir JSON en las solicitudes
 
 
 // Conectar a MongoDB
-mongoose.connect('mongodb://localhost:27017/votacion')
+console.log(process.env.MONGODB);
+mongoose.connect(DBURI)
     .then(() => console.log('Conexión a MongoDB exitosa'))
     .catch(err => console.error('Error de conexión a MongoDB:', err));
 const escultores = [
