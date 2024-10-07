@@ -4,7 +4,7 @@ import Escultor from './Escultor';
 const votarPorEscultor = async (id) => {
   console.log('ID enviado al backend:', id);
   try {
-    const response = await fetch(`https://localhost:3000/api/votar/${id}`, { method: 'POST' });
+    const response = await fetch(origin + `/api/votar/${id}`, { method: 'POST' });
     if (response.ok) {
         const message = await response.text();
         alert(message); // Muestra el mensaje de éxito

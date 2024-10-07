@@ -6,12 +6,6 @@ const Escultor = require('./modelos/Escultor');
 const app = express();
 const PORT = Number(process.env.PORT) | 3000;
 const DBURI= process.env.MONGODBURI
-const fs = require('fs');
-const https = require('https');
-const options = {
-  key: fs.readFileSync('backend/localhost-key.pem'),
-  cert: fs.readFileSync('backend/localhost.pem')    
-};
 // Middleware
 app.use(cors({
   origin: function (origin, callback) {
@@ -83,6 +77,6 @@ app.post('/api/votar/:id', async (req, res) => {
   
 
 // Iniciar el servidor
-https.createServer(options, app).listen(PORT, () => {
-  console.log(`Servidor HTTPS corriendo en https://localhost:${PORT}`);
+app.listen(PORT, () => {
+  console.log(`Servidor HTTP corriendo en http://localhost:${PORT}`);
 });
