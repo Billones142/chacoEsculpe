@@ -13,4 +13,5 @@ router.get("/api/voting", async (req, res) => {
 })
 
 router.use("/public", express.static("./public"))
+
 module.exports= router

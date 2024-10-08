@@ -1,0 +1,123 @@
+
+body {
+    font-family: 'Montserrat', sans-serif; 
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #256bec 0%, #d68f0b 100%); 
+    color: #333; 
+  }
+  
+  h1 {
+    text-align: center;
+    color: #b2d1b7 ; 
+    margin-bottom: 30px;
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(133, 4, 238, 0.3);
+  }
+  
+  
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: linear-gradient(135deg, #9172da 0%, #c96b1e 100%);
+    border-radius: 15px; 
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); 
+    position: relative; 
+  }
+  
+  
+  .container::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    z-index: -1;
+    filter: blur(30px);
+  }
+  
+  
+  .escultor {
+    background-color: #f9f9f9; 
+    border-radius: 12px; 
+    padding: 20px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative; 
+  }
+  
+  
+  .escultor:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); 
+  }
+  
+ 
+  .escultor::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    background: rgba(255, 105, 180, 0.1); 
+    border-radius: 12px; 
+    z-index: -1; 
+    transition: all 0.3s ease; 
+  }
+  
+  
+  .escultor:hover::after {
+    background: rgba(255, 105, 180, 0.3); 
+  }
+  
+  .escultor a {
+    text-decoration: none;
+    color: #adcff5; 
+    font-weight: bold; 
+    font-size: 1.2rem; 
+    transition: color 0.3s ease; 
+    text-shadow: 2px 2px 5px rgba(255, 251, 5, 0.534);
+  }
+  
+  
+  .escultor a:hover {
+    color: #ffcc6b; 
+  }
+  
+ 
+  button {
+    background: linear-gradient(45deg, #ff6b6b, #ffcc6b); 
+    color: white;
+    border: none;
+    padding: 15px 30px; 
+    font-size: 1.2rem; 
+    cursor: pointer;
+    border-radius: 50px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    letter-spacing: 1px; 
+    text-transform: uppercase; 
+  }
+
+  button:hover {
+    background: linear-gradient(45deg, #ffcc6b, #f514cf); 
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+ 
+  button:active {
+    transform: translateY(1px);
+  }
+  
