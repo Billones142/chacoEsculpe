@@ -3,12 +3,12 @@
   "name": "Chaco Esculpe - Sistema de Votación",
   "icons": [
     {
-      "src": "Webp.net-resizeimage.png",
+      "src": "images/Webp.net-resizeimage.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "Webp.net-resizeimage (1).png",
+      "src": "images/Webp.net-resizeimage (1).png",
       "sizes": "512x512",
       "type": "image/png"
     }
@@ -19,13 +19,13 @@
   "background_color": "#ffffff",
   "screenshots": [
     {
-      "src": "screenshot-wide.png",
+      "src": "images/screenshot-wide.png",
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide"
     },
     {
-      "src": "screenshot-mobile.png",
+      "src": "images/screenshot-mobile.png",
       "sizes": "720x1280",
       "type": "image/png"
     }
