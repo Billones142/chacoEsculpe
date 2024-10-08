@@ -1,4 +1,4 @@
-async function cargarListaDeEscultores(params) {
+async function cargarListaDeEscultores() {
     listaEscultores= document.getElementById("listaEscultores")
     listaEscultores.innerHTML = "";
 
