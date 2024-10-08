@@ -1,0 +1,13 @@
+{
+    "rewrites": [
+      {
+        "source": "/api/voting",
+        "destination": "/server.js"
+      },
+      {
+        "source": "/api/voting/(.*)",
+        "destination": "/server.js"
+      }
+    ]
+  }
+  
