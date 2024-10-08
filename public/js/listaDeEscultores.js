@@ -9,7 +9,7 @@ async function cargarListaDeEscultores(params) {
         const {_id, nombre, votos}= element
 
         divEscultor= document.createElement("div")
-        divEscultor.class= "escultor"
+        divEscultor.className= "escultor"
         divEscultor.id= _id
 
         nombreEscultor= document.createElement("a")
@@ -19,7 +19,7 @@ async function cargarListaDeEscultores(params) {
         votosEscultor.innerHTML= '<a class="propiedad">Votos:</a>' + `<a class="valor">${votos}</a>`
         
         button= document.createElement("button")
-        button.class= "voteButton"
+        button.className= "button voteButton"
         button.addEventListener("click", () => {
             votar(_id, nombre)
         })

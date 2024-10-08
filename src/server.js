@@ -1,6 +1,5 @@
 const express = require('express');
-require("dotenv").config()
-const Escultor = require('./modelos/Escultor'); 
+require("dotenv").config({path:".dev.env"})
 const { default: mongoose } = require('mongoose');
 const getRoutes= require("./infraestructura/adaptadores/gets")
 const postRoutes= require("./infraestructura/adaptadores/posts")
@@ -18,7 +17,7 @@ mongoose.connect(DBURI)
     .then(() => console.log('Conexión a MongoDB exitosa'))
     .catch(err => console.error('Error de conexión a MongoDB:', err));
 
-const escultores = [
+/*const escultores = [
     { _id: '67034b6bae46d9c747c93890', nombre: 'Escultor 1', votos: 0 },
     { _id: '67034b6bae46d9c747c93891', nombre: 'Escultor 2', votos: 0 },
     { _id: '67034b6bae46d9c747c93892', nombre: 'Escultor 3', votos: 0 },  
@@ -40,7 +39,7 @@ const insertarEscultores = async () => {
     }
   };
 
-insertarEscultores();
+insertarEscultores();*/
 
 // Iniciar el servidor
 app.listen(PORT, () => {

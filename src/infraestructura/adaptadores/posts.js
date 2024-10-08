@@ -1,9 +1,7 @@
 const express = require("express")
 const Escultor = require('./../../modelos/Escultor'); 
-const { default: mongoose } = require("mongoose");
 
 router= express.Router()
-
 
 
 // Rutas para escultores y votación (agrega tus rutas aquí)
