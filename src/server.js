@@ -2,10 +2,14 @@ const express = require('express');
 require("dotenv").config()
 const Escultor = require('./modelos/Escultor'); 
 const { default: mongoose } = require('mongoose');
+const getRoutes= require("./infraestructura/adaptadores/gets")
+const postRoutes= require("./infraestructura/adaptadores/posts")
 const app = express();
 const PORT = Number(process.env.PORT) | 3000;
 const DBURI= process.env.MONGODBURI
 
+app.use(postRoutes)
+app.use(getRoutes)
 
 app.use(express.json()); // Para poder recibir JSON en las solicitudes
 

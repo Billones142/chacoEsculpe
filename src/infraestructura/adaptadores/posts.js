@@ -1,5 +1,5 @@
 const express = require("express")
-const Escultor = require('./../modelos/Escultor'); 
+const Escultor = require('./../../modelos/Escultor'); 
 const { default: mongoose } = require("mongoose");
 
 router= express.Router()
@@ -7,8 +7,8 @@ router= express.Router()
 
 
 // Rutas para escultores y votación (agrega tus rutas aquí)
-router.post('/api/votar/*', async (req, res) => {
-    const id  = req.url.slice("/api/votar/");
+router.post('/api/voting/*', async (req, res) => {
+    const id  = req.url.slice("/api/voting/");
     console.log('ID recibido:', id);  // Esto te ayudará a verificar el ID que llega
     try {
         const escultor = await Escultor.findById(id);
