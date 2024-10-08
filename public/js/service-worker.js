@@ -4,11 +4,17 @@ const CACHE_NAME = 'v1';
 // Archivos a cachear
 const urlsToCache = [
   '/',
-  '/index.html',
-  '/manifest.json',
-  '/static/js/bundle.js', // Archivos estáticos importantes
-  '/static/css/main.css',
-  '/favicon.ico',  // Agrega otros archivos que necesites
+  '/public/manifest.json',
+  '/public/index.html',
+  '/public/css/style.css',
+  '/public/js/index.js',
+  '/public/js/listaDeEscultores.js',
+  '/public/images/icons/favicon.ico',
+  '/public/images/icons/icon-128x128.png',
+  '/public/images/icons/icon-256x256.png',
+  '/public/images/icons/icon-512x512.png',
+  '/public/images/WideScreenshot-1280x720',
+  '/public/images/MobileScreenshot-720x1280',
 ];
 
 // Evento de instalación

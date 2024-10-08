@@ -9,7 +9,8 @@ router.get("/",(req, res)=>{
 
 router.get("/api/voting", async (req, res) => {
     let escultores= await Escultor.find({});
-    res.send(JSON.stringify(escultores))
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).send(JSON.stringify(escultores))
 })
 
 router.use("/public", express.static("./public"))
