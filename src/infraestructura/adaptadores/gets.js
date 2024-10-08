@@ -1,17 +1,25 @@
-const express = require("express")
-const Escultor = require('./../../modelos/Escultor'); 
+const express = require("express");
+const IEscultorService = require('../../puertos/IEscultorService');
 
-router= express.Router()
+function createGetRouter(escultorService) {
+    const router = express.Router();
 
-router.get("/",(req, res)=>{
-    res.redirect("/public/index.html")
-})
+    router.get("/", (req, res) => {
+        res.redirect("/public/index.html");
+    });
 
-router.get("/api/voting", async (req, res) => {
-    let escultores= await Escultor.find({});
-    res.send(JSON.stringify(escultores))
-})
+    router.get("/api/voting", async (req, res) => {
+        try {
+            let escultores = await escultorService.obtenerEscultores();
+            res.json(escultores);
+        } catch (error) {
+            res.status(500).send('Error al obtener escultores');
+        }
+    });
 
-router.use("/public", express.static("./public"))
+    router.use("/public", express.static("./public"));
 
-module.exports= router
+    return router;
+}
+
+module.exports = createGetRouter;

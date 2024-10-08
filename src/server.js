@@ -1,16 +1,24 @@
 const express = require('express');
-require("dotenv").config({path:".dev.env"})
+require("dotenv").config({path:".dev.env"});
 const { default: mongoose } = require('mongoose');
-const getRoutes= require("./infraestructura/adaptadores/gets")
-const postRoutes= require("./infraestructura/adaptadores/posts")
+const createGetRouter = require("./infraestructura/adaptadores/gets");
+const createPostRouter = require("./infraestructura/adaptadores/posts");
+const EscultorRepository = require('./repositorios/EscultorRepository');
+const EscultorService = require('./servicios/EscultorService');
+
 const app = express();
-const PORT = Number(process.env.PORT) | 3000;
-const DBURI= process.env.MONGODBURI
+const PORT = Number(process.env.PORT) || 3000;
+const DBURI = process.env.MONGODBURI;
 
-app.use(postRoutes)
-app.use(getRoutes)
+app.use(express.json());
+app.use(express.static('public')); // agregada en proceso de debuggin incluyendo `listaParaVotar.forEach`
 
-app.use(express.json()); // Para poder recibir JSON en las solicitudes
+// Dependency Injection
+const escultorRepository = new EscultorRepository();
+const escultorService = new EscultorService(escultorRepository);
+
+app.use(createPostRouter(escultorService));
+app.use(createGetRouter(escultorService));
 
 // Conectar a MongoDB
 mongoose.connect(DBURI)
@@ -40,8 +48,7 @@ const insertarEscultores = async () => {
   };
 
 insertarEscultores();*/
-
 // Iniciar el servidor
 app.listen(PORT, () => {
-  console.log(`Servidor HTTP corriendo en http://localhost:${PORT}`);
+    console.log(`Servidor HTTP corriendo en http://localhost:${PORT}`);
 });
